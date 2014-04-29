@@ -5,6 +5,7 @@
 # general commands
 alias rr='bundle exec rake routes | grep'
 alias ali='vi ~/.bash_aliases'
+alias al='alias | grep '
 alias reload='. ~/.bashrc'
 alias infl='cd ~/Code/infl'
 
@@ -27,7 +28,7 @@ alias gb="git branch -v"
 alias gs="git status --short"
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gah="git add --patch"
+alias gap="git add --patch"
 alias ga="git add "
 alias gaa="git add . --all "
 alias gu="git reset HEAD "

@@ -30,6 +30,7 @@ alias gaa="git add . --all "
 alias gu="git reset HEAD "
 alias gpd="git push origin development"
 alias glg='git log --color --decorate --oneline --graph'
+alias gll="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
 alias pull='git pull --rebase && bundle && migrate'
 alias git_reset_my_branch='git reset --hard HEAD'
 alias gm='git merge'

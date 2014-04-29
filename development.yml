@@ -1,0 +1,55 @@
+# ~/.tmuxinator/development.yml
+
+name: development
+root: ~/Code/infl/hub
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+pre: bundle
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - editor: vim
+  - hub:
+      layout: ebb4,211x112,0,0[211x54,0,0{57x54,0,0[57x22,0,0,1,57x7,0,23,3,57x11,0,31,4,57x11,0,43,14],77x54,58,0,5,75x54,136,0,6},211x57,0,55,13]
+      panes:
+        - zeus:
+          - cd ..; cd hub; I_HATE_POW=true bundle exec zeus start
+        - konacha:
+          - cd ..; cd hub; I_HATE_POW=true bundle exec rake konacha:serve
+        - sidekiq:
+          - cd ..; cd hub; I_HATE_POW=true bundle exec rake influitive:sidekiq
+        - guard:
+          - cd ..; cd hub; I_HATE_POW=true bundle exec guard
+        - logs:
+          - cd ..; cd hub; I_HATE_POW=true bundle exec rails server
+        - console:
+          - cd ..; cd hub; I_HATE_POW=true bundle exec rails console
+        - bash:
+          - #
+  - narci:
+      panes:
+        - logs:
+          - cd ..; cd narci-service; bundle exec rails server -p 3001
+        - console:
+          - cd ..; cd narci-service; bundle exec rails console
+  - waldo:
+      panes:
+        - logs:
+          - cd ..; cd waldo; bundle exec rails server -p 3002
+        - tracker:
+          - cd ..; cd waldo; bundle exec rake multiple_man:worker
+        - console:
+          - cd ..; cd waldo;
+
+

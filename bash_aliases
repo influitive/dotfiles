@@ -1,9 +1,12 @@
 # ALIASES
+#    These will override the aliases defined by BASH-IT
+#    type `alias` to see all aliases
 
-#general commands
+# general commands
 alias rr='bundle exec rake routes | grep'
 alias ali='vi ~/.bash_aliases'
 alias reload='. ~/.bashrc'
+alias infl='cd ~/Code/infl'
 
 #postgres
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
@@ -31,7 +34,7 @@ alias gu="git reset HEAD "
 alias gpd="git push origin development"
 alias glg='git log --color --decorate --oneline --graph'
 alias gll="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
-alias pull='git pull --rebase && bundle && migrate'
+alias pull='git pull --rebase '
 alias git_reset_my_branch='git reset --hard HEAD'
 alias gm='git merge'
 

@@ -18,7 +18,7 @@ pre: bundle
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
 
-#  to get layout string use ''
+#  to get layout string use 'tmux list-windows'
 
 windows:
   - editor: vim

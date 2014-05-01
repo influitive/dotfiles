@@ -7,7 +7,7 @@ alias rr='bundle exec rake routes | grep'
 alias ali='vi ~/.bash_aliases'
 alias al='alias | grep '
 alias reload='. ~/.bashrc'
-alias infl='cd ~/Code/infl'
+alias hub='cd ~/Code/infl/hub'
 
 #postgres
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'

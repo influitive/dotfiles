@@ -18,15 +18,19 @@ pre: bundle
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
 
+#  to get layout string use ''
+
 windows:
   - editor: vim
   - hub:
-      layout: ebb4,211x112,0,0[211x54,0,0{57x54,0,0[57x22,0,0,1,57x7,0,23,3,57x11,0,31,4,57x11,0,43,14],77x54,58,0,5,75x54,136,0,6},211x57,0,55,13]
+      layout: a6f1,181x104,0,0[181x50,0,0{46x50,0,0[46x13,0,0,1,46x9,0,14,4,46x8,0,24,13,46x5,0,33,5,46x11,0,39,6],68x50,47,0,7,65x50,116,0,8},181x53,0,51,9]
       panes:
         - zeus:
           - cd ..; cd hub; I_HATE_POW=true bundle exec zeus start
         - konacha:
           - cd ..; cd hub; I_HATE_POW=true bundle exec rake konacha:serve
+        - hutch:
+          - cd ..; cd hub; I_HATE_POW=true bundle exec hutch
         - sidekiq:
           - cd ..; cd hub; I_HATE_POW=true bundle exec rake influitive:sidekiq
         - guard:

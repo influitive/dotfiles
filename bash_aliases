@@ -52,7 +52,7 @@ alias zrs='zeus rspec -f d '
 # postgres commands
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-
+alias restore_prod="createdb prod_data; pg_restore -d prod_data -xOv -F c  -C -n hstore -n public -n SCHEMA_TO_LOAD ~/Downloads/SOME_FILE.dump"
 # rails
 alias migrate='bundle exec rake apartment:migrate db:test:prepare'
 alias redo='bundle exec rake apartment:migrate:redo'

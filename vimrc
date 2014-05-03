@@ -27,17 +27,40 @@
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
     Bundle 'gmarik/vundle'
-    "Add your bundles here
-    Bundle 'Syntastic' "uber awesome syntax and errors highlighter
-    Bundle 'altercation/vim-colors-solarized' "T-H-E colorscheme
-    Bundle 'https://github.com/tpope/vim-fugitive' "So awesome, it should be illegal
-    "...All your other bundles...
+
+
+" Bundles
+    Bundle 'airblade/vim-gitgutter'
+    Bundle 'Lokaltog/vim-powerline'
+    Bundle 'sjl/gundo.vim'
+    Bundle 'ragtag.vim'
+    Bundle 'rails.vim'
+    Bundle 'fugitive.vim'
+    Bundle 'Solarized'
+    Bundle 'Zenburn'
+    Bundle 'Diablo3'
+    Bundle 'surround.vim'
+    Bundle 'Sass'
+    Bundle 'jQuery'
+    Bundle 'handlebars'
+    Bundle 'ctrlp.vim'
+    Bundle 'SuperTab'
+    Bundle 'ack.vim'
+    Bundle 'YankRing.vim'
+    Bundle 'tComment'
+    Bundle 'ZenCoding.vim'
+    Bundle 'The-NERD-tree'
+    Bundle "MarcWeber/vim-addon-mw-utils"
+    Bundle "tomtom/tlib_vim"
+    Bundle "garbas/vim-snipmate"
+    Bundle 'enricribas/snipmate-snippets'
+" Bundles (end)
+
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
         :BundleInstall
     endif
-" Setting up Vundle - the vim plugin b
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -58,46 +81,6 @@
   let maplocalleader = ","
 
   compiler ruby
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VUNDLE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
-
-  " Vundle manages vim addons
-  " let Vundle manage Vundle
-  Bundle 'gmarik/vundle'
-
-  " Packages Installed (changes require BundleInstall)
-  Bundle 'airblade/vim-gitgutter'
-  Bundle 'Lokaltog/vim-powerline'
-  Bundle 'sjl/gundo.vim'
-  Bundle 'ragtag.vim'
-  Bundle 'rails.vim'
-  Bundle 'fugitive.vim'
-  Bundle 'Solarized'
-  Bundle 'Zenburn'
-  Bundle 'Diablo3'
-  Bundle 'surround.vim'
-  Bundle 'Sass'
-  Bundle 'jQuery'
-  Bundle 'handlebars'
-  Bundle 'ctrlp.vim'
-  Bundle 'SuperTab'
-  Bundle 'ack.vim'
-  Bundle 'YankRing.vim'
-  Bundle 'tComment'
-  Bundle 'ZenCoding.vim'
-  Bundle 'The-NERD-tree'
-
-  Bundle "MarcWeber/vim-addon-mw-utils"
-  Bundle "tomtom/tlib_vim"
-  Bundle "garbas/vim-snipmate"
-  Bundle 'enricribas/snipmate-snippets'
-
-  set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM ADDONS MANAGER
@@ -180,11 +163,6 @@
 " ZenCoding
 "   Standard is <c-y>, (comma)
 
-" ZoomWin
-"   maximizes current window and then restores
-"   maximizes current window and then restores
-"     nnoremap <c-o> :silent :call ZoomWin()<cr>
-  " NOTE: ZoomWin does not work well and is therefore not installed.
 
 " DWM Tiling Window Management
   " This works better than ZoonWin

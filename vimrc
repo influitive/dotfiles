@@ -15,53 +15,76 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Setting up Vundle - the vim plugin bundler
-    let iCanHazVundle=1
-    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-    if !filereadable(vundle_readme)
-        echo "Installing Vundle.."
-        echo ""
-        silent !mkdir -p ~/.vim/bundle
-        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-        let iCanHazVundle=0
-    endif
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-    Bundle 'gmarik/vundle'
+   set nocompatible
+   filetype off
+
+   " set the runtime path to include Vundle and initialize
+   set rtp+=~/.vim/bundle/Vundle.vim
 
 
-" Bundles
-    Bundle 'airblade/vim-gitgutter'
-    Bundle 'Lokaltog/vim-powerline'
-    Bundle 'sjl/gundo.vim'
-    Bundle 'ragtag.vim'
-    Bundle 'rails.vim'
-    Bundle 'fugitive.vim'
-    Bundle 'Solarized'
-    Bundle 'Zenburn'
-    Bundle 'Diablo3'
-    Bundle 'surround.vim'
-    Bundle 'Sass'
-    Bundle 'jQuery'
-    Bundle 'handlebars'
-    Bundle 'ctrlp.vim'
-    Bundle 'SuperTab'
-    Bundle 'ack.vim'
-    Bundle 'YankRing.vim'
-    Bundle 'tComment'
-    Bundle 'ZenCoding.vim'
-    Bundle 'The-NERD-tree'
-    Bundle "MarcWeber/vim-addon-mw-utils"
-    Bundle "tomtom/tlib_vim"
-    Bundle "garbas/vim-snipmate"
-    Bundle 'enricribas/snipmate-snippets'
-" Bundles (end)
+" Plugins
+   call vundle#begin()
+   Plugin 'gmarik/Vundle.vim'
 
-    if iCanHazVundle == 0
-        echo "Installing Bundles, please ignore key map error messages"
-        echo ""
-        :BundleInstall
-    endif
+   Plugin 'airblade/vim-gitgutter'
+   Plugin 'Lokaltog/vim-powerline'
+   Plugin 'sjl/gundo.vim'
+   Plugin 'ragtag.vim'
+   Plugin 'rails.vim'
+   Plugin 'fugitive.vim'
+   Plugin 'Solarized'
+   Plugin 'Zenburn'
+   Plugin 'Diablo3'
+   Plugin 'surround.vim'
+   Plugin 'Sass'
+   Plugin 'jQuery'
+   Plugin 'handlebars'
+   Plugin 'ctrlp.vim'
+   Plugin 'SuperTab'
+   Plugin 'ack.vim'
+   Plugin 'YankRing.vim'
+   Plugin 'tComment'
+   Plugin 'mattn/emmet-vim'
+   Plugin 'The-NERD-tree'
 
+   Plugin 'SirVer/ultisnips'
+   Plugin 'honza/vim-snippets'
+
+   call vundle#end()
+" Plugins (end)
+
+    filetype plugin indent on
+
+" Brief help
+
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LEADER
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" redefine leader. must be before all uses cleader
+  let mapleader = ","
+  let maplocalleader = ","
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SNIPPETS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+  let g:UltiSnipsExpandTrigger="<tab>"
+  let g:UltiSnipsJumpForwardTrigger="<tab>"
+  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+  let g:UltiSnipsEditSplit="vertical"
+
+
+  map <leader>se :UltiSnipsEdit<cr>
+  map <leader>sa :UltiSnipsAddFiletypes<space>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STANDARD SETTINGS
@@ -76,65 +99,7 @@
 " Turn on specific actions for different types of files
   filetype plugin indent on
 
-" redefine leader. must be before all uses cleader
-  let mapleader = ","
-  let maplocalleader = ","
-
   compiler ruby
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VIM ADDONS MANAGER
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" \ 'delimitMate',
-" \ 'Align%294',
-" \ 'checksyntax',
-" \ 'vim-indent-object',
-" \ 'dwm',
-" \ 'EasyMotion',
-" \ 'matchit.zip',
-" \ 'Tagbar',
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" EXTERNAL PLUGINS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Snippets (SnipMate)
-"
-"   completes common code snippets after pressing tab
-"
-" NOTE:
-" <c-r><tab> show a list of available snippets
-"
-  " Open corresponding snippets files
-
-  "   Set your github name here if you fork my snippets file
-  let username        = 'enricribas'
-
-  let snippetsCommand = 'e ~/.vim/vim-addons/github-' . username . '-snipmate-snippets/snippets/'
-
-  command! SnippetsEditBase       execute snippetsCommand
-  command! SnippetsEditRuby       execute snippetsCommand . 'ruby.snippets'
-  command! SnippetsEditJavascript execute snippetsCommand . 'javascript.snippets'
-  command! SnippetsEditJQuery     execute snippetsCommand . 'javascript-jquery.snippets'
-  command! SnippetsEditERB        execute snippetsCommand . 'eruby.snippets'
-  command! SnippetsEditCSS        execute snippetsCommand . 'css.snippets'
-
-  " Mappings
-    " Pick snippet file from list
-    nnoremap <leader>ss :SnippetsEditBase<cr>
-
-    " Change common snippet files for Ruby on Rails
-    nnoremap <leader>sr :SnippetsEditRuby<CR>
-    nnoremap <leader>sj :SnippetsEditJavascript<CR>
-    nnoremap <leader>sq :SnippetsEditJQuery<CR>
-    nnoremap <leader>sc :SnippetsEditCSS<CR>
-
-  " Filetypes
-    let g:snipMate = {}
-    let g:snipMate.scope_aliases = {}
-    let g:snipMate.scope_aliases['javascript'] = 'javascript,javascript-jquery'
-    let g:snipMate.scope_aliases['sass'] = 'css'
 
 " Indent Text Object
 "
@@ -247,6 +212,10 @@
 
 " Surround
 "   surrounds text objects with quotes, brackets, etc.
+"   basically
+"     add surround    = ys
+"     change surround = cs
+"     delete surround = ds
 
       "  Old text                  Command     New text ~
 
@@ -304,7 +273,7 @@
   set gdefault
 
 " code folding
-  set foldmethod=syntax
+  set foldmethod=indent
   set foldlevel=9999
   set foldcolumn=0
 
@@ -442,8 +411,6 @@ endfunction
 map <leader>RS :call RunTestFile()<cr>
 map <leader>rs :call RunNearestTest()<cr>
 map <leader>rsa :call RunTests('')<cr>
-"map <leader>c :w\|:!script/features<cr>
-"map <leader>w :w\|:!script/features --profile wip<cr>
 
 function! RunTestFile(...)
     if a:0
@@ -501,6 +468,10 @@ endfunction
 
 " Go to middle of line
   map gm :call cursor(0, virtcol('$')/2)<CR>
+
+" Jump up and down a little faster
+  nnoremap <c-j> 10j
+  nnoremap <c-k> 10k
 
 " Annoyed with pressing shift so often
   nnoremap ; :
@@ -607,5 +578,28 @@ if version >= 703
 endif
 set undolevels=1000 "maximum number of changes that can be undone
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" DVORAK
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" no d h
+" no h j
+" no t k
+" no n l
+" no j d
+" no l n
+" no L N
+
+" " Added benefits
+
+" no - $
+" no _ ^
+" no N <C-w><C-w>
+" no T <C-w><C-r>
+" no H 8<Down>
+" no T 8<Up>
+" no D <C-w><C-r>
+
+
 " the end of enric's vimrc. thanks.
+"
 "

@@ -9,6 +9,9 @@ alias al='alias | grep '
 alias reload='. ~/.bashrc'
 alias hub='cd ~/Code/infl/hub'
 
+# Vagrant 
+alias v='Vagrant '
+
 #postgres
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg_stop='pg_ctl -D /usr/local/var/postgres stop'
@@ -20,6 +23,7 @@ alias sublime_folder='cd /Users/dev/Library/Application\ Support/Sublime\ Text\ 
 alias irbs="irb --simple-prompt"
 
 #git commands
+alias gbn="git co -b "
 alias gca='git commit -a --amend --no-edit'
 alias gc="git commit -m "
 alias gco="git checkout "

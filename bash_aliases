@@ -8,6 +8,8 @@ alias ali='vi ~/.bash_aliases'
 alias al='alias | grep '
 alias reload='. ~/.bashrc'
 alias hub='cd ~/Code/infl/hub'
+alias v='vagrant '
+alias servers='foreman start -f Procfile-dev'
 
 # Vagrant 
 alias v='Vagrant '

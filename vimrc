@@ -3,15 +3,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
     " a .vimrc files customized for use with Ruby on Rails
-
     " --enric ribas i susany
 
-    " thanks to everyone I stole stuff from :)
-    " I stand on the shoulders of giants.
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" INSTALL VUNDLE ITSELF (very meta)
+" PACKAGES with Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Setting up Vundle - the vim plugin bundler
@@ -46,6 +41,8 @@
    Plugin 'tComment'
    Plugin 'mattn/emmet-vim'
    Plugin 'The-NERD-tree'
+   Plugin 'michaeljsmith/vim-indent-object'
+   Plugin 'bkad/CamelCaseMotion'
 
    Plugin 'SirVer/ultisnips'
    Plugin 'honza/vim-snippets'
@@ -82,7 +79,6 @@
 " If you want :UltiSnipsEdit to split your window.
   let g:UltiSnipsEditSplit="vertical"
 
-
   map <leader>se :UltiSnipsEdit<cr>
   map <leader>sa :UltiSnipsAddFiletypes<space>
 
@@ -98,18 +94,18 @@
 
 " Turn on specific actions for different types of files
   filetype plugin indent on
-
   compiler ruby
 
 " Indent Text Object
 "
 " Selects text based on indentation level
-"  <count>ai         (A)n (I)ndentation level and line above.
-"  <count>ii         (I)nner (I)ndentation level (no line above).
-"  <count>aI         (A)n (I)ndentation level and lines above/below.
+"  <command>ai         (A)n (I)ndentation level and line above.
+"  <command>ii         (I)nner (I)ndentation level (no line above).
+"  <command>aI         (A)n (I)ndentation level and lines above/below.
 
-" EasyMotion
-"   <leader><leader><motion commands>
+" Ruby Text Object (not installed)
+" <command>ar – a Ruby block
+" <command>ir – inner Ruby block
 
 " Ack
 "   o    to open (same as enter)
@@ -125,7 +121,9 @@
 "
 "   css, html, js, etc..
 
-" ZenCoding
+" Emmet
+  let g:user_emmet_leader_key='<C-M>'
+
 "   Standard is <c-y>, (comma)
 
 

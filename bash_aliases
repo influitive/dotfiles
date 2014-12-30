@@ -8,6 +8,7 @@ alias ali='vi ~/.bash_aliases'
 alias al='alias | grep '
 alias reload='. ~/.bashrc'
 alias hub='cd ~/Code/infl/hub'
+alias dots='cd ~/Code/infl/devops/dotfiles'
 alias v='vagrant '
 alias servers='foreman start -f Procfile-dev'
 
@@ -40,6 +41,7 @@ alias gaa="git add . --all "
 alias gu="git reset HEAD "
 alias gpd="git push origin development"
 alias glg='git log --color --decorate --oneline --graph'
+alias 10='glg -n10'
 alias gll="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
 alias pull='git pull --rebase '
 alias git_reset_my_branch='git reset --hard HEAD'

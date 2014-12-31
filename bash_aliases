@@ -9,11 +9,7 @@ alias al='alias | grep '
 alias reload='. ~/.bashrc'
 alias hub='cd ~/Code/infl/hub'
 alias dots='cd ~/Code/infl/devops/dotfiles'
-alias v='vagrant '
 alias servers='foreman start -f Procfile-dev'
-
-# Vagrant 
-alias v='Vagrant '
 
 #postgres
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
@@ -56,7 +52,6 @@ alias rsa='bundle exec rspec spec --tag ~slow --tag ~type:feature'
 alias rsai='bundle exec rspec spec'
 alias zrs='zeus rspec -f d '
 alias z='zeus '
-
 
 # postgres commands
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"

@@ -55,6 +55,7 @@ alias rs='bundle exec rspec -f d'
 alias rsa='bundle exec rspec spec --tag ~slow --tag ~type:feature'
 alias rsai='bundle exec rspec spec'
 alias zrs='zeus rspec -f d '
+alias z='zeus '
 
 
 # postgres commands

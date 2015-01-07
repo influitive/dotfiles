@@ -17,6 +17,9 @@ alias sublime_folder='cd /Users/dev/Library/Application\ Support/Sublime\ Text\ 
 #ruby
 alias irbs="irb --simple-prompt"
 
+#installerator
+alias installerator='cd ~/Code/infl/devops/installerator; bundle exec soloist; cd -'
+
 #git commands
 alias gbn="git co -b "
 alias gca='git commit -a --amend --no-edit'

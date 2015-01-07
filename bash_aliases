@@ -35,6 +35,7 @@ alias gap="git add --patch"
 alias ga="git add "
 alias gaa="git add . --all "
 alias gu="git reset HEAD "
+alias gfuckit='git reset; git checkout .; git clean -fd'
 alias gpd="git push origin development"
 alias glg='git log --color --decorate --oneline --graph'
 alias 10='glg -n10'

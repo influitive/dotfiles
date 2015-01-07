@@ -11,10 +11,6 @@ alias hub='cd ~/Code/infl/hub'
 alias dots='cd ~/Code/infl/devops/dotfiles'
 alias servers='foreman start -f Procfile-dev'
 
-#postgres
-alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pg_stop='pg_ctl -D /usr/local/var/postgres stop'
-
 #sublime
 alias sublime_folder='cd /Users/dev/Library/Application\ Support/Sublime\ Text\ 2\Packages'
 
@@ -41,7 +37,6 @@ alias glg='git log --color --decorate --oneline --graph'
 alias 10='glg -n10'
 alias gll="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
 alias pull='git pull --rebase '
-alias git_reset_my_branch='git reset --hard HEAD'
 alias gm='git merge'
 
 # rails development
@@ -58,6 +53,7 @@ alias z='zeus '
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias restore_prod="createdb prod_data; pg_restore -d prod_data -xOv -F c  -C -n hstore -n public -n SCHEMA_TO_LOAD ~/Downloads/SOME_FILE.dump"
+
 # rails
 alias migrate='bundle exec rake db:migrate db:test:prepare'
 alias redo='bundle exec rake db:migrate:redo'

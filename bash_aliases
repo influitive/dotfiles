@@ -4,7 +4,7 @@
 
 # general commands
 alias rr='bundle exec rake routes | grep'
-alias ali='vi ~/.bash_aliases'
+alias ali='vim ~/.bash_aliases'
 alias al='alias | grep '
 alias reload='. ~/.bashrc'
 alias hub='cd ~/Code/infl/hub'
@@ -58,7 +58,7 @@ alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias restore_prod="createdb prod_data; pg_restore -d prod_data -xOv -F c  -C -n hstore -n public -n SCHEMA_TO_LOAD ~/Downloads/SOME_FILE.dump"
 
 # rails
-alias migrate='bundle exec rake db:migrate db:test:prepare'
+alias migrate='bundle exec rake db:migrate db:test:prepare; echo flushall | redis-cli; '
 alias redo='bundle exec rake db:migrate:redo'
 alias r="bundle exec rails"
 alias be="bundle exec "

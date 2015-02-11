@@ -65,5 +65,8 @@ alias redo='bundle exec rake db:migrate:redo'
 alias r="bundle exec rails"
 alias be="bundle exec "
 
-alias fs="cd ../waldo && git pull && bundle; cd ../api && git pull && bundle; cd ../narci-service && git pull && bundle && be rake db:migrate; cd ../hub && git pull && bundle && be rake db:migrate && foreman start -f Procfile-dev"
+alias fs="cd ../waldo && git pull && bundle;
+          cd ../api && git pull && bundle;
+          cd ../narci-service && git pull && bundle && be rake db:migrate;
+          cd ../hub && git pull && bundle && be rake db:migrate db:test:prepare && foreman start -f Procfile-dev"
 alias servers="foreman start -f Procfile-dev"

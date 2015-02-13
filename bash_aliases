@@ -50,7 +50,7 @@ alias rs='bundle exec rspec -f d'
 alias rsa='bundle exec rspec spec --tag ~slow --tag ~type:feature'
 alias rsai='bundle exec rspec spec'
 alias zrs='zeus rspec -f d '
-alias z='zeus '
+alias z='zeus'
 
 # postgres commands
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"

@@ -37,9 +37,9 @@ alias gu="git reset HEAD "
 alias gfuckit='git reset; git checkout .; git clean -fd'
 alias gpd="git push origin development"
 alias glg='git log --color --decorate --oneline --graph'
-alias 10='glg -n10'
-alias 20='glg -n20'
-alias 40='glg -n40'
+alias 10='gll -n10 --graph'
+alias 20='gll -n20 --graph'
+alias 40='gll -n40 --graph'
 alias gll="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
 alias pull='git pull --rebase '
 alias gm='git merge'

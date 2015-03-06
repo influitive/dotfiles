@@ -51,8 +51,6 @@ alias rk='bundle exec rake'
 alias rs='bundle exec rspec -f d'
 alias rsa='bundle exec rspec spec --tag ~slow --tag ~type:feature'
 alias rsai='bundle exec rspec spec'
-alias zrs='zeus rspec -f d '
-alias z='zeus'
 
 # postgres commands
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
@@ -62,12 +60,12 @@ alias restore_prod="createdb prod_data; pg_restore -d prod_data -xOv -F c  -C -n
 # rails
 alias migrate='bundle exec rake db:migrate db:test:prepare; echo flushall | redis-cli; '
 alias redo='bundle exec rake db:migrate:redo'
-alias r="bundle exec rails"
+alias r="./bin/rails "
 alias be="bundle exec "
 
-alias fs="cd ../waldo && git pull && bundle;
-          cd ../api && git pull && bundle;
-          cd ../community && git pull && bundle && be rake db:migrate;
-          cd ../narci-service && git pull && bundle && be rake db:migrate;
-          cd ../hub && git pull && bundle && be rake db:migrate db:test:prepare && foreman start -f Procfile-dev"
+alias fs="echo Waldo     && cd ~ && cd Code/infl/waldo         && git pull && bundle;
+          echo Api       && cd ~ && cd Code/infl/api           && git pull && bundle;
+          echo Community && cd ~ && cd Code/infl/community     && git pull && bundle && be rake db:migrate;
+          echo Narci     && cd ~ && cd Code/infl/narci-service && git pull && bundle && be rake db:migrate;
+          echo Hub       && cd ~ && cd Code/infl/hub           && git pull && bundle && be rake db:migrate db:test:prepare && foreman start -f Procfile-dev"
 alias servers="foreman start -f Procfile-dev"

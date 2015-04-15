@@ -63,9 +63,29 @@ alias redo='bundle exec rake db:migrate:redo'
 alias r="./bin/rails "
 alias be="bundle exec "
 
-alias fs="echo Waldo     && cd ~ && cd Code/infl/waldo         && git pull && bundle;
-          echo Api       && cd ~ && cd Code/infl/api           && git pull && bundle;
-          echo Community && cd ~ && cd Code/infl/community     && git pull && bundle && be rake db:migrate;
-          echo Narci     && cd ~ && cd Code/infl/narci-service && git pull && bundle && be rake db:migrate;
-          echo Hub       && cd ~ && cd Code/infl/hub           && git pull && bundle && be rake db:migrate db:test:prepare && foreman start -f Procfile-dev"
+fs() {
+  echo "-----Updating Waldo-----"
+  cd ~/Code/infl/waldo && git pull && bundle
+  echo "-----Updating Api-----"
+    cd ~/Code/infl/api
+    git pull && bundle
+  echo "-----Updating Community-----"
+    cd ~/Code/infl/community
+    git pull && bundle
+    npm install && gulp --nowatch
+    be rake db:migrate
+  echo "-----Updating Narci-----"
+    cd ~/Code/infl/narci-service
+    git pull && bundle
+    be rake db:migrate
+  echo "-----Updating Hub-----"
+    cd ~/Code/infl/hub
+    git pull && bundle
+    npm install && gulp --nowatch
+    be rake db:migrate db:test:prepare
+    cd ./engines/integration && npm install && gulp --nowatch && cd ../../
+  echo "-----Starting Server-----"
+    foreman start -f Procfile-dev
+}
+
 alias servers="foreman start -f Procfile-dev"

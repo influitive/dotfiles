@@ -81,9 +81,9 @@ fs() {
   echo "-----Updating Hub-----"
     cd ~/Code/infl/hub
     git pull && bundle
-    npm install && gulp --nowatch
+    npm install && gulp scripts copy-fonts
     be rake db:migrate db:test:prepare
-    cd ./engines/integration && npm install && gulp --nowatch && cd ../../
+    cd ./engines/integration && npm install && gulp build && cd ../../
   echo "-----Starting Server-----"
     foreman start -f Procfile-dev
 }

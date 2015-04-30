@@ -42,6 +42,7 @@ alias 20='gll -n20 --graph'
 alias 40='gll -n40 --graph'
 alias gll="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
 alias pull='git pull --rebase '
+alias gfh='git log --pretty=short -u -L '
 alias gm='git merge'
 
 # rails development

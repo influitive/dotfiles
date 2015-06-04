@@ -74,7 +74,7 @@ fs() {
   echo "-----Updating Community-----"
     cd ~/Code/infl/community
     git pull && bundle
-    npm install && ./node_modules/.bin/gulp --nowatch
+    npm install && ./node_modules/.bin/gulp build
     be rake db:migrate
   echo "-----Updating Narci-----"
     cd ~/Code/infl/narci-service
@@ -83,11 +83,10 @@ fs() {
   echo "-----Updating Hub-----"
     cd ~/Code/infl/hub
     git pull && bundle
-    npm install && ./node_modules/.bin/gulp scripts copy-fonts
+    npm install && ./node_modules/.bin/gulp build
     be rake db:migrate db:test:prepare
     cd ./engines/integration && npm install && ./node_modules/.bin/gulp build && cd ../../
   echo "-----Starting Server-----"
     foreman start -f Procfile-dev
 }
 
-alias servers="foreman start -f Procfile-dev"

@@ -85,7 +85,6 @@ fs() {
     git pull && bundle
     npm install && ./node_modules/.bin/gulp build
     be rake db:migrate db:test:prepare
-    cd ./engines/integration && npm install && ./node_modules/.bin/gulp build && cd ../../
   echo "-----Starting Server-----"
     foreman start -f Procfile-dev
 }

@@ -11,6 +11,7 @@ alias hub='cd ~/Code/infl/hub'
 alias dots='cd ~/Code/infl/devops/dotfiles'
 alias servers='foreman start -f Procfile-dev'
 alias kill_servers='kill -9 $(ps aux | grep -E "([r]uby|[s]pring|[s]idekiq)" | perl -lane "print \$F[1]")'
+alias ea="EXTERNAL_ACCESS=True "
 
 #sublime
 alias sublime_folder='cd /Users/dev/Library/Application\ Support/Sublime\ Text\ 2\Packages'
@@ -50,7 +51,7 @@ alias gm='git merge'
 alias taild='tail -f log/development.log'
 alias tailt='tail -f log/test.log'
 alias rk='bundle exec rake'
-alias rs='bundle exec rspec -f d'
+alias rs='bin/rspec -f d'
 alias rsa='bundle exec rspec spec --tag ~slow --tag ~type:feature'
 alias rsai='bundle exec rspec spec'
 

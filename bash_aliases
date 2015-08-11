@@ -46,6 +46,7 @@ alias gll="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Cr
 alias pull='git pull --rebase '
 alias gfh='git log --pretty=short -u -L '
 alias gm='git merge'
+alias grs='git reset --soft'
 
 # rails development
 alias taild='tail -f log/development.log'

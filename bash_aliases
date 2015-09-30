@@ -47,6 +47,7 @@ alias pull='git pull --rebase '
 alias gfh='git log --pretty=short -u -L '
 alias gm='git merge'
 alias grs='git reset --soft'
+alias pbm='git pull; bundle; bundle exec rake db:migrate; bundle exec rake db:test:prepare'
 
 # rails development
 alias taild='tail -f log/development.log'

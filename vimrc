@@ -44,7 +44,9 @@
    Plugin 'michaeljsmith/vim-indent-object'
    Plugin 'bkad/CamelCaseMotion'
 
-   Plugin 'SirVer/ultisnips'
+   if version >= 704
+     Plugin 'SirVer/ultisnips'
+   endif
    Plugin 'honza/vim-snippets'
 
    call vundle#end()

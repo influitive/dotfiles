@@ -56,6 +56,7 @@ alias rk='bundle exec rake'
 alias rs='bin/rspec -f d'
 alias rsa='bundle exec rspec spec --tag ~slow --tag ~type:feature'
 alias rsai='bundle exec rspec spec'
+alias bm='bundle; bundle exec rake db:migrate; bundle exec rake db:test:prepare'
 
 # postgres commands
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"

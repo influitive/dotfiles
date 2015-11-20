@@ -9,7 +9,7 @@ alias al='alias | grep '
 alias reload='. ~/.bashrc'
 alias hub='cd ~/Code/infl/hub'
 alias dots='cd ~/Code/infl/devops/dotfiles'
-alias servers='foreman start -f Procfile-dev'
+alias servers='foreman start -f Procfile-dev-without_community'
 alias kill_servers='kill -9 $(ps aux | grep -E "([r]uby|[s]pring|[s]idekiq)" | perl -lane "print \$F[1]")'
 alias ea="EXTERNAL_ACCESS=True "
 

@@ -47,7 +47,8 @@ alias pull='git pull --rebase '
 alias gfh='git log --pretty=short -u -L '
 alias gm='git merge'
 alias grs='git reset --soft'
-alias pbm='git pull; bundle; bundle exec rake db:migrate; bundle exec rake db:test:prepare'
+alias pbm='git pull && bundle && bundle exec rake db:migrate && bundle exec rake db:test:prepare'
+alias pbmn='git pull && bundle && bundle exec rake db:migrate && bundle exec rake db:test:prepare && npm install'
 
 # rails development
 alias taild='tail -f log/development.log'
@@ -56,7 +57,8 @@ alias rk='bundle exec rake'
 alias rs='bin/rspec -f d'
 alias rsa='bundle exec rspec spec --tag ~slow --tag ~type:feature'
 alias rsai='bundle exec rspec spec'
-alias bm='bundle; bundle exec rake db:migrate; bundle exec rake db:test:prepare'
+alias bm='bundle && bundle exec rake db:migrate && bundle exec rake db:test:prepare'
+alias bmn='bundle && bundle exec rake db:migrate && bundle exec rake db:test:prepare && npm install'
 
 # postgres commands
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"

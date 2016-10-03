@@ -77,8 +77,8 @@ fs() {
   echo "-----Updating Api-----"
     cd ~/Code/infl/api
     git pull && bundle
-  echo "-----Updating Community-----"
-    cd ~/Code/infl/community
+  echo "-----Updating Discussions-----"
+    cd ~/Code/infl/discussions
     git pull && bundle
     npm install && ./node_modules/.bin/gulp build
     be rake db:migrate

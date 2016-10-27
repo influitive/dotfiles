@@ -20,7 +20,7 @@ alias sublime_folder='cd /Users/dev/Library/Application\ Support/Sublime\ Text\ 
 alias irbs="irb --simple-prompt"
 
 #installerator
-alias installerator='cd ~/Code/infl/devops/installerator && bundle exec soloist && cd -'
+alias installerator='pushd ~/Code/infl/devops/installerator && bundle exec soloist && popd'
 
 #git commands
 alias gbn="git co -b "
@@ -94,3 +94,7 @@ fs() {
   echo "-----Starting Server-----"
     foreman start -f Procfile-dev
 }
+
+# emacs
+alias e='emacsclient -t'
+alias ec='emacsclient --no-wait -c'

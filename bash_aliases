@@ -71,6 +71,22 @@ alias redo='bundle exec rake db:migrate:redo'
 alias r="./bin/rails "
 alias be="bundle exec "
 
+# docker
+alias dc='docker-compose '
+alias dc-run='dc run --rm '
+
+alias web-run='dc-run web '
+alias web-bundle='web-run bundle '
+alias web-rails='web-bundle exec rails '
+alias web-rake='web-bundle exec rake '
+alias web-rspec='web-bundle exec rspec '
+alias web-hanami='web-bundle exec hanami '
+
+alias wh='web-hanami '
+alias wr='web-rails '
+
+alias docker-update-clock='docker run -it --rm --privileged --pid=host debian nsenter -t 1 -m -u -n -i date -u $(date -u +%m%d%H%M%Y)'
+
 fs() {
   echo "-----Updating Waldo-----"
   cd ~/Code/infl/waldo && git pull && bundle
